@@ -54,7 +54,6 @@ const Header = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 24,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",

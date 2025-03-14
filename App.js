@@ -1,18 +1,24 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import FormScreen from './Lab13/screens/FormScreen';
+import HomeScreen from './Lab12/screens/HomeScreen';
+import DetailScreen from './Lab12/screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen 
-          name="Form" 
-          component={FormScreen}
-          options={{ title: 'Form Example' }}
+          name="Home" 
+          component={HomeScreen} 
+          options={{ title: 'Lịch Trình Du Lịch' }} 
+        />
+        <Stack.Screen 
+          name="Detail" 
+          component={DetailScreen} 
+          options={{ title: 'Chi Tiết Khách Sạn' }} 
         />
       </Stack.Navigator>
     </NavigationContainer>
