@@ -1,24 +1,14 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Main from './Lab2/components/Main';
-import { View } from 'react-native';
-const Stack = createStackNavigator();
+import { Provider } from 'react-redux';
+import store from './Lab5/redux/store';
+import HomeScreen from './Lab5/screens/HomeScreen';
 
-export default function App() {
+const App = () => {
   return (
-      <View style={styles.container}>
-        <Main />
-      </View>
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-});
+export default App;
