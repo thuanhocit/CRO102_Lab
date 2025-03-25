@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
             <Button title="Chọn ảnh" onPress={pickImage} />
-            {imageUri && <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />}
+            {imageUri && <Image source={{ uri: imageUri }} style={{ width: 500, height: 500 }} />}
         </View>
     );
 };
