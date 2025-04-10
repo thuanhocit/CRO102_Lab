@@ -11,13 +11,17 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-native-async-storage/async-storage": "^2.1.2",
+    "@react-native-community/slider": "^4.5.6",
+    "@react-native-firebase/app": "^21.13.0",
+    "@react-native-firebase/storage": "^21.13.0",
     "@react-native-masked-view/masked-view": "^0.3.2",
     "@react-navigation/native": "^7.0.15",
     "@react-navigation/stack": "^7.1.2",
     "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.8.4",
     "expo": "~52.0.38",
-    "expo-image-picker": "^16.0.6",
+    "expo-av": "^15.0.2",
+    "expo-image-picker": "~16.0.6",
     "expo-linear-gradient": "~14.0.2",
     "expo-status-bar": "~2.0.1",
     "metro-react-native-babel-preset": "^0.77.0",
@@ -33,6 +37,16 @@
     "react-redux": "^9.2.0",
     "redux-persist": "^6.0.0"
   },
+    "expo": {
+      "android": {
+        "permissions": ["AUDIO_RECORDING"]
+      },
+      "ios": {
+        "infoPlist": {
+          "UIBackgroundModes": ["audio"]
+        }
+      }
+    },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/plugin-transform-private-methods": "^7.25.9",
