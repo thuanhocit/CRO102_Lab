@@ -1,0 +1,56 @@
+//==============================Bài 1==========================================
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './Lab61/redux/store'
+import HomeScreen from './Lab61/screens/HomeScreen';
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
+  );
+}
+
+//==============================Bài 2===========================================
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './Lab62/redux/store';
+import PokemonScreen from './Lab62/screens/PokemonScreen';
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <PokemonScreen />
+    </Provider>
+  );
+}
+// tên: pikachu, charizard, Squirtle, Jigglypuff, Gengar, Eevee, Mewtwo
+
+//=============================Bài 3==============================================
+// App.js
+// App.js
+import React from 'react';
+import { Provider } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { store } from './Lab63/store/store'
+import SignupScreen from './Lab63/screens/SignupScreen';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Signup">
+          <Stack.Screen name="Signup" component={SignupScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
+  );
+};
+
+export default App;
+
+//json-server --watch db.json --port 3000

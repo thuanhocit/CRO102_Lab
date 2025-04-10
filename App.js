@@ -1,22 +1,23 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./HomeScreen";
-import PhotoCapture from "./Lab41/PhotoCapture";
-import ImagePickerScreen from "./Lab42/ImagePickerScreen";
-import MusicPlayerScreen from "./Lab43/MusicPlayerScreen";
+// App.js
+import React from 'react';
+import { Provider } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { store } from './Lab63/store/store'
+import SignupScreen from './Lab63/screens/SignupScreen';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Page1" component={PhotoCapture} />
-        <Stack.Screen name="Page2" component={ImagePickerScreen} />
-        <Stack.Screen name="Page3" component={MusicPlayerScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Signup">
+          <Stack.Screen name="Signup" component={SignupScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
-}
+};
+
+export default App;
